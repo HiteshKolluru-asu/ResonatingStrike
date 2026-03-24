@@ -12,7 +12,7 @@ User Question
      v
 +------------------+
 | Hybrid Search    |
-| BM25 (keywords)  |  --> Top 5 most relevant comments
+| BM25 (keywords)  |  --> Top 20 most relevant comments
 | + Vectors (meaning)|
 +------------------+
      |
