@@ -1,8 +1,8 @@
 # Resonating Strike
 
-A RAG (Retrieval-Augmented Generation) pipeline that answers questions about the **League of Legends First Stand 2026** tournament using real community reactions scraped from Reddit.
+A Multi-Collection RAG (Retrieval-Augmented Generation) pipeline that answers questions about the **League of Legends First Stand 2026** tournament by blending raw, verified tournament facts with real community reactions scraped from Reddit.
 
-Ask it "How did Bin perform in the finals?" and it retrieves the most relevant comments from 1,500+ fan reactions, then uses a local LLM to generate an answer grounded in what the community actually said.
+Ask it "Who played Zaahen the best?" or "How did Bin perform in the finals?" and it retrieves the most relevant knowledge chunks—player profiles, champion stats, match results, and fan reactions—then generates a natural, esports-analyst style answer using local or cloud-based LLMs.
 
 ## How It Works
 
@@ -10,24 +10,28 @@ Ask it "How did Bin perform in the finals?" and it retrieves the most relevant c
 User Question
      |
      v
-+------------------+
-| Hybrid Search    |
-| BM25 (keywords)  |  --> Top 20 most relevant comments
-| + Vectors (meaning)|
-+------------------+
++-----------------------------+
+| Multi-Collection Retrieval  |
+| 1. Comments (Hybrid Search) |
+| 2. Players (Semantic)       |
+| 3. Champions (Semantic)     |
+| 4. Tournament (Semantic)    |
++-----------------------------+
      |
      v
-+------------------+
-| LLM (llama3)     |  --> Natural language answer
-| + Tournament context|     based on retrieved comments
-+------------------+
++-----------------------------+
+| LLM (Groq / Ollama)         |  --> Natural language analyst response
+| + Blended Context           |
++-----------------------------+
 ```
 
-**BM25** finds exact keyword matches (searching "Bin" finds comments mentioning "Bin").
-**Semantic search** finds meaning matches (searching "dominated" finds comments saying "absolute top gap").
-**Hybrid** combines both, normalized to 0-1 scale, weighted equally.
+The pipeline searches four distinct ChromaDB collections simultaneously:
+- **Comments (Hybrid):** Uses BM25 (keyword matching) + Semantic Search (meaning) on 1,500+ Reddit fan reactions, normalized and combined.
+- **Players:** Profiles of 40 pro players and 8 coaches for deep roster insights.
+- **Champions:** Pick/ban stats, win rates, and meta narratives for 61 champions using Riot's Data Dragon and tournament data.
+- **Tournament:** Bracket results, match summaries, MVP awards, and team data.
 
-The LLM receives the retrieved comments plus tournament metadata (rosters, bracket results, champion stats) and generates a concise answer.
+The retrieved context is compiled into a comprehensive prompt and sent to an LLM, which adopts an expert yet conversational esports analyst persona.
 
 ## Project Structure
 
@@ -36,75 +40,81 @@ ResonatingStrike/
 ├── GatheringData/
 │   ├── getData.py                          # Scrapes Reddit comments from all 13 series
 │   ├── cleanData.py                        # Removes duplicates, deleted content, link dumps
-│   ├── resonating_strike_data.csv          # Raw data (1,565 comments)
 │   └── cleaned_resonating_strike_data.csv  # Cleaned data (~1,564 comments)
+├── Knowledge/
+│   ├── champions.json                      # 61 champion profiles & tournament stats
+│   ├── fetch_champions.py                  # Generates champions.json using Data Dragon
+│   ├── players.json                        # 40 player & 8 coach profiles
+│   └── tournament.json                     # Bracket results, match summaries, teams
 ├── Processing/
-│   ├── bm25_Search.py                      # Standalone BM25 keyword search
-│   ├── semantic_search.py                  # Standalone vector/embedding search
-│   └── hybrid_search.py                    # Full pipeline: hybrid search + LLM generation
-├── Project.md                              # Internal project notes
+│   ├── multi_collection_groq.py            # Primary script: Cloud LLM via Groq API (llama-3.3-70b-versatile)
+│   ├── multi_collection_search.py          # Local alternative: Local LLM via Ollama (gemma2)
+│   ├── hybrid_search.py                    # Legacy: Standalone hybrid search
+│   └── semantic_search.py                  # Legacy: Standalone vector/embedding search
+├── chroma_db/                              # Persistent ChromaDB storage (auto-generated)
 └── README.md
 ```
 
 ## Tech Stack
 
-- **Python 3** + pandas, numpy
-- **rank-bm25** - BM25Okapi keyword search
-- **sentence-transformers** - `all-MiniLM-L6-v2` for embeddings (384-dim vectors)
-- **ChromaDB** - in-memory vector store
-- **Ollama** + llama3 (8B) - local LLM for answer generation
+- **Python 3** + `pandas`, `numpy`, `python-dotenv`
+- **Embedding Model**: `sentence-transformers/multi-qa-MiniLM-L6-cos-v1` (tuned specifically for semantic QA)
+- **Vector Store**: **ChromaDB** with persistent local storage
+- **Lexical Search**: `rank-bm25` (BM25Okapi)
+- **LLM APIs**:
+  - Cloud: **Groq API** (`llama-3.3-70b-versatile`) for blazing-fast inference without GPU overhead.
+  - Local: **Ollama** (`gemma2`) for offline privacy and local execution.
 
 ## Setup
 
-```bash
-# Clone and enter project
-cd ResonatingStrike
+1. **Clone and enter project:**
+   ```bash
+   git clone <repo-url>
+   cd ResonatingStrike
+   ```
 
-# Set up virtual environment
-python3 -m venv GatheringData/venv
-source GatheringData/venv/bin/activate
+2. **Set up virtual environment:**
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
 
-# Install dependencies
-pip install pandas rank-bm25 sentence-transformers chromadb requests numpy
+3. **Install dependencies:**
+   ```bash
+   pip install pandas rank-bm25 sentence-transformers chromadb requests numpy python-dotenv
+   ```
 
-# Install Ollama (https://ollama.com) then pull the model
-ollama pull llama3
-```
+4. **Environment Variables:**
+   Create a `.env` file in the root directory and add your Groq API key:
+   ```env
+   GROQ_API_KEY=gsk_your_api_key_here
+   ```
 
 ## Usage
 
-```bash
-# Make sure Ollama is running
-ollama serve
+For the best, fastest experience, use the Groq cloud pipeline:
 
-# Run the full RAG pipeline
-source GatheringData/venv/bin/activate
+```bash
+source venv/bin/activate
 cd Processing
-python3 hybrid_search.py
+python3 multi_collection_groq.py
 ```
 
-Then ask questions like:
-- `Who was the best player in the tournament?`
-- `How did G2 beat GenG?`
-- `What did people think about Bin's Jax?`
-- `best top laner`
+To run it entirely locally (requires Ollama and the `gemma2` model installed):
 
-Type `quit` to exit.
+```bash
+source venv/bin/activate
+cd Processing
+python3 multi_collection_search.py
+```
 
-## Data
+### Features to Try
+- **Ask a complex question:** "Who was the best top laner based on community sentiment vs stats?" or "What role was Zaahen played in?"
+- **Debug retrieval mode:** Type `debug` and hit enter. The next query you ask will print out exactly which chunks from which databases were retrieved and their similarity scores.
 
-1,564 cleaned comments from Reddit's r/leagueoflegends covering all 13 series of First Stand 2026:
-- Group stage (8 matches)
-- Semifinals (2 matches)
-- Finals (BLG vs G2)
+## Recent Upgrades
 
-Each comment includes: match name, comment body, and Reddit score (upvotes).
-
-## Limitations
-
-- **Small dataset** - 1,564 comments limits retrieval quality. Niche queries may return weak results. A larger dataset (100K+ comments) would significantly improve answer quality.
-- **Dynamic context** - Retrieves up to 20 relevant comments per query (filtered by a 0.1 relevance threshold), but niche topics may still have few matches.
-- **General embedding model** - `all-MiniLM-L6-v2` doesn't understand League-specific slang (e.g., "purple monster" for Baron Nashor).
-- **No persistence** - ChromaDB runs in-memory, so embeddings are regenerated each run.
-
-Despite these limitations, llama3 8B does a surprisingly good job of synthesizing answers from minimal context — a testament to how well even small local models perform when given the right retrieval pipeline.
+- **Persistent Vector Storage:** Collections are now saved locally (`./chroma_db`). The heavy lifting of embedding 1,700+ document chunks is only done once, reducing pipeline startup time to less than 1 second.
+- **Upgraded Encoder:** Transitioned from `all-MiniLM-L6-v2` to `multi-qa-MiniLM-L6-cos-v1` for superior performance in question-answering context retrieval.
+- **Structured Knowledge Graph:** Split the single text blob into four distinct, highly detailed databases.
+- **Esports Analyst Persona:** Transformed the LLM's system prompt from standard robotic responses to an authentic, conversational flow that smoothly weaves factual stats with the underlying Reddit context.

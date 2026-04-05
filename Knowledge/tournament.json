@@ -1,0 +1,442 @@
+{
+  "tournament": {
+    "name": "First Stand 2026",
+    "full_name": "League of Legends First Stand 2026",
+    "location": "São Paulo, Brazil",
+    "dates": {
+      "start": "2026-03-16",
+      "end": "2026-03-22"
+    },
+    "format": "8 teams, GSL double-elimination groups into single-elimination knockout stage. All matches are Best of 5.",
+    "prize_pool": null,
+    "champion": "BLG",
+    "runner_up": "G2 Esports"
+  },
+
+  "teams": {
+    "BLG": {
+      "full_name": "Bilibili Gaming",
+      "region": "LPL",
+      "seed": "LPL #1",
+      "result": "Champions",
+      "roster": {
+        "Top": { "name": "Bin", "nationality": "Chinese" },
+        "Jungle": { "name": "Xun", "nationality": "Chinese" },
+        "Mid": { "name": "knight", "nationality": "Chinese" },
+        "Bot": { "name": "Viper", "nationality": "Korean" },
+        "Support": { "name": "ON", "nationality": "Korean" }
+      },
+      "coach": { "ign": "Daeny", "real_name": "Yang Dae-in", "nationality": "Korean" }
+    },
+    "G2": {
+      "full_name": "G2 Esports",
+      "region": "LEC",
+      "seed": "LEC #1",
+      "result": "Runners-up",
+      "roster": {
+        "Top": { "name": "BrokenBlade", "aliases": ["BB"], "nationality": "German-Turkish" },
+        "Jungle": { "name": "SkewMond", "nationality": "French-Lebanese" },
+        "Mid": { "name": "Caps", "nationality": "Danish" },
+        "Bot": { "name": "Hans Sama", "nationality": "French" },
+        "Support": { "name": "Labrov", "nationality": "Greek" }
+      },
+      "coach": { "ign": "Dylan Falco", "real_name": "Dylan Falco", "nationality": "Canadian" }
+    },
+    "GEN": {
+      "full_name": "Gen.G",
+      "region": "LCK",
+      "seed": "LCK #1",
+      "result": "Semi-finals (3rd-4th)",
+      "roster": {
+        "Top": { "name": "Kiin", "nationality": "Korean" },
+        "Jungle": { "name": "Canyon", "nationality": "Korean" },
+        "Mid": { "name": "Chovy", "nationality": "Korean" },
+        "Bot": { "name": "Ruler", "nationality": "Korean" },
+        "Support": { "name": "Duro", "nationality": "Korean" }
+      },
+      "coach": { "ign": "Ryu", "real_name": "Yoo Sang-wook", "nationality": "Korean" }
+    },
+    "BFX": {
+      "full_name": "BNK FearX",
+      "region": "LCK",
+      "seed": "LCK #2",
+      "result": "Group A Eliminated (5th-8th)",
+      "roster": {
+        "Top": { "name": "Clear", "nationality": "Korean" },
+        "Jungle": { "name": "Raptor", "nationality": "Korean" },
+        "Mid": { "name": "VicLa", "nationality": "Korean" },
+        "Bot": { "name": "Diable", "nationality": "Korean" },
+        "Support": { "name": "Kellin", "nationality": "Korean" }
+      },
+      "coach": { "ign": "Edo", "real_name": "Park Jun-seok", "nationality": "Korean" }
+    },
+    "JDG": {
+      "full_name": "JD Gaming",
+      "region": "LPL",
+      "seed": "LPL #2",
+      "result": "Semi-finals (3rd-4th)",
+      "roster": {
+        "Top": { "name": "Xiaoxu", "nationality": "Chinese" },
+        "Jungle": { "name": "JunJia", "nationality": "Chinese" },
+        "Mid": { "name": "HongQ", "nationality": "Chinese" },
+        "Bot": { "name": "GALA", "nationality": "Chinese" },
+        "Support": { "name": "Vampire", "nationality": "Chinese" }
+      },
+      "coach": { "ign": "Tabe", "real_name": "Wong Pak Kan", "nationality": "Hong Kong Chinese" }
+    },
+    "LYON": {
+      "full_name": "LYON",
+      "region": "LCS",
+      "seed": "LCS #1",
+      "result": "Group B Eliminated (5th-8th)",
+      "roster": {
+        "Top": { "name": "Dhokla", "nationality": "American" },
+        "Jungle": { "name": "Inspired", "nationality": "Polish" },
+        "Mid": { "name": "Saint", "nationality": "Korean" },
+        "Bot": { "name": "Berserker", "nationality": "Korean" },
+        "Support": { "name": "Isles", "nationality": "Filipino-Australian" }
+      },
+      "coach": { "ign": "Reignover", "real_name": "Kim Yeu-jin", "nationality": "Korean" }
+    },
+    "LOUD": {
+      "full_name": "LOUD",
+      "region": "CBLOL",
+      "seed": "CBLOL #1 (Host team)",
+      "result": "Group B Eliminated (5th-8th)",
+      "roster": {
+        "Top": { "name": "Xyno", "nationality": "Brazilian" },
+        "Jungle": { "name": "YoungJae", "nationality": "Korean" },
+        "Mid": { "name": "Envy", "nationality": "Brazilian" },
+        "Bot": { "name": "Bull", "nationality": "Brazilian" },
+        "Support": { "name": "RedBert", "nationality": "Brazilian" }
+      },
+      "coach": { "ign": "Raise", "real_name": "Oh Ji-hwan", "nationality": "Korean" }
+    },
+    "TSW": {
+      "full_name": "Team Secret Whales",
+      "region": "LCP",
+      "seed": "LCP #1",
+      "result": "Group A Eliminated (5th-8th)",
+      "roster": {
+        "Top": { "name": "Pun", "nationality": "Vietnamese" },
+        "Jungle": { "name": "Hizto", "nationality": "Vietnamese" },
+        "Mid": { "name": "Dire", "nationality": "Vietnamese" },
+        "Bot": { "name": "Eddie", "nationality": "Vietnamese" },
+        "Support": { "name": "Bie", "nationality": "Vietnamese" }
+      },
+      "coach": { "ign": "WarHorse", "real_name": "Chen Ju-Chih", "nationality": "Taiwanese" }
+    }
+  },
+
+  "bracket": {
+    "group_stage": {
+      "Group A": {
+        "format": "GSL double-elimination",
+        "advanced": ["BLG", "G2"],
+        "eliminated": ["BFX", "TSW"],
+        "matches": [
+          {
+            "id": "grpA_open_1",
+            "stage": "Group A Openers",
+            "match_label": "GrpA Open: BLG vs BFX",
+            "team1": "BLG",
+            "team2": "BFX",
+            "winner": "BLG",
+            "score": "3-0",
+            "games": [
+              { "game": 1, "winner": "BLG", "notable": null },
+              { "game": 2, "winner": "BLG", "notable": null },
+              { "game": 3, "winner": "BLG", "notable": "Cleanest BFX win — competitive but BLG closed it out" }
+            ],
+            "comment_count": 385,
+            "summary": "BLG dominated BFX in a clean 3-0 sweep. BFX struggled to match BLG's tempo across all three games."
+          },
+          {
+            "id": "grpA_winners",
+            "stage": "Group A Winners Match",
+            "match_label": "GrpA Winners: BLG vs G2",
+            "team1": "BLG",
+            "team2": "G2",
+            "winner": "BLG",
+            "score": "3-0",
+            "games": [
+              { "game": 1, "winner": "BLG", "notable": null },
+              { "game": 2, "winner": "BLG", "notable": null }
+            ],
+            "comment_count": 118,
+            "summary": "BLG continued their dominant form by sweeping G2 in the winners match. BLG advances directly to semis, G2 drops to the decider match."
+          },
+          {
+            "id": "grpA_elim",
+            "stage": "Group A Elimination Match",
+            "match_label": "GrpA Elim: BFX vs TSW",
+            "team1": "BFX",
+            "team2": "TSW",
+            "winner": "BFX",
+            "score": "3-0",
+            "games": [],
+            "comment_count": 4,
+            "summary": "BFX eliminated TSW in a low-profile sweep. TSW finished last in Group A."
+          },
+          {
+            "id": "grpA_decider",
+            "stage": "Group A Decider",
+            "match_label": "GrpA Decider: G2 vs BFX",
+            "team1": "G2",
+            "team2": "BFX",
+            "winner": "G2",
+            "score": "3-0",
+            "games": [
+              { "game": 1, "winner": "G2", "notable": "Caps and Diable traded half their HP before minions spawned" },
+              { "game": 2, "winner": "G2", "notable": "G2 dominant performance — Skewmond jungle gap, Labrov playmaking" }
+            ],
+            "comment_count": 116,
+            "summary": "G2 dominated BFX 3-0 to advance from Group A. Caps, SkewMond, and Labrov all had standout performances. BFX eliminated."
+          }
+        ]
+      },
+      "Group B": {
+        "format": "GSL double-elimination",
+        "advanced": ["GEN", "JDG"],
+        "eliminated": ["LYON", "LOUD"],
+        "matches": [
+          {
+            "id": "grpB_open_1",
+            "stage": "Group B Openers",
+            "match_label": "GrpB Open: GEN vs JDG",
+            "team1": "GEN",
+            "team2": "JDG",
+            "winner": "GEN",
+            "score": "3-0",
+            "games": [
+              { "game": 1, "winner": "GEN", "notable": null },
+              { "game": 2, "winner": "GEN", "notable": null }
+            ],
+            "comment_count": 111,
+            "summary": "Gen.G swept JDG in a convincing 3-0, sending JDG to the losers bracket."
+          },
+          {
+            "id": "grpB_open_2",
+            "stage": "Group B Openers",
+            "match_label": "GrpB Open: LYON vs LOUD",
+            "team1": "LYON",
+            "team2": "LOUD",
+            "winner": "LYON",
+            "score": "3-1",
+            "games": [
+              { "game": 1, "winner": "LYON", "notable": null },
+              { "game": 2, "winner": "LYON", "notable": null },
+              { "game": 3, "winner": "LOUD", "notable": null },
+              { "game": 4, "winner": "LYON", "notable": null }
+            ],
+            "comment_count": 204,
+            "summary": "LYON defeated LOUD 3-1 in a match between the Western/wildcard teams. LOUD, as host team, was eliminated to the losers bracket."
+          },
+          {
+            "id": "grpB_elim",
+            "stage": "Group B Elimination Match",
+            "match_label": "GrpB Elim: JDG vs LOUD",
+            "team1": "JDG",
+            "team2": "LOUD",
+            "winner": "JDG",
+            "score": "3-0",
+            "games": [
+              { "game": 1, "winner": "JDG", "notable": null },
+              { "game": 2, "winner": "JDG", "notable": null }
+            ],
+            "comment_count": 112,
+            "summary": "JDG bounced back from their loss to Gen.G and swept LOUD to survive elimination. LOUD is eliminated from the tournament."
+          },
+          {
+            "id": "grpB_decider",
+            "stage": "Group B Decider",
+            "match_label": "GrpB Decider: JDG vs LYON",
+            "team1": "JDG",
+            "team2": "LYON",
+            "winner": "JDG",
+            "score": "3-0",
+            "games": [
+              { "game": 1, "winner": "JDG", "notable": null },
+              { "game": 2, "winner": "JDG", "notable": null },
+              { "game": 3, "winner": "JDG", "notable": "JDG macro game domination" }
+            ],
+            "comment_count": 162,
+            "summary": "JDG completed their losers bracket run by sweeping LYON 3-0 to advance from Group B. LYON eliminated."
+          }
+        ]
+      }
+    },
+
+    "knockout_stage": {
+      "semi_finals": [
+        {
+          "id": "semi_1",
+          "stage": "Semi-Final 1",
+          "match_label": "Semi 1: G2 vs GEN",
+          "team1": "G2",
+          "team2": "GEN",
+          "winner": "G2",
+          "score": "3-0",
+          "games": [
+            { "game": 1, "winner": "G2", "notable": "Caps solokilled Chovy in lane" },
+            { "game": 2, "winner": "G2", "notable": "SkewMond massive jungle gap over Canyon" }
+          ],
+          "mvp": null,
+          "comment_count": 107,
+          "summary": "G2 stunned Gen.G with a dominant 3-0 sweep. Caps solokilled Chovy, SkewMond outjungled Canyon, and the Western hope narrative reached fever pitch. One of the most shocking results in the tournament.",
+          "narratives": [
+            "Western fans euphoric — G2 dismantled the LCK #1 seed",
+            "Caps continued his legacy of carrying EU at internationals",
+            "SkewMond's breakout performance elevated him to star status",
+            "Canyon had an uncharacteristically poor series"
+          ]
+        },
+        {
+          "id": "semi_2",
+          "stage": "Semi-Final 2",
+          "match_label": "Semi 2: BLG vs JDG",
+          "team1": "BLG",
+          "team2": "JDG",
+          "winner": "BLG",
+          "score": "3-0",
+          "games": [
+            { "game": 1, "winner": "BLG", "notable": null },
+            { "game": 2, "winner": "BLG", "notable": null }
+          ],
+          "mvp": null,
+          "comment_count": 104,
+          "summary": "BLG swept their LPL rivals JDG 3-0, continuing their unbeaten run through the tournament. The LPL civil war was completely one-sided.",
+          "narratives": [
+            "BLG's dominance was questioned by no one at this point",
+            "JDG's run through the losers bracket ended against the eventual champions"
+          ]
+        }
+      ],
+      "finals": {
+        "id": "finals",
+        "stage": "Grand Finals",
+        "match_label": "Finals: BLG vs G2",
+        "team1": "BLG",
+        "team2": "G2",
+        "winner": "BLG",
+        "score": "3-1",
+        "games": [
+          { "game": 1, "winner": "BLG", "notable": "BLG asserted dominance early" },
+          { "game": 2, "winner": "BLG", "notable": "BLG stomping until a bad late game throw — but still won" },
+          { "game": 3, "winner": "G2", "notable": "G2's only win of the series; BrokenBlade played well outside of laning phase" },
+          { "game": 4, "winner": "BLG", "notable": "BLG stomp to close out the series" }
+        ],
+        "mvp": "Bin",
+        "comment_count": 135,
+        "summary": "BLG won First Stand 2026 with a 3-1 victory over G2 Esports. Bin was named Finals MVP after dominating the top lane matchups throughout the series. G2 took Game 3 to avoid the sweep, with BrokenBlade showing resilience, but BLG's overall class was too much. This was China's first major international title since 2023.",
+        "narratives": [
+          "Bin vs G2 is a canon event — he consistently dominates Western top laners",
+          "knight solidified his status as a world-class mid laner",
+          "G2 exceeded expectations by reaching the finals but were ultimately outclassed",
+          "First international title for China since 2023",
+          "BLG went through the entire tournament losing only 1 game (Game 3 of finals)",
+          "Hans Sama's Varus was criticized — couldn't land ultimates",
+          "BrokenBlade had laning phase struggles but showed up in teamfights in Game 3"
+        ]
+      }
+    }
+  },
+
+  "champion_stats": {
+    "most_picked": [
+      { "champion": "Xin Zhao", "pick_rate": "70.0%" },
+      { "champion": "Yunara", "pick_rate": "66.7%" },
+      { "champion": "Vi", "pick_rate": "45.5%" },
+      { "champion": "Ahri", "pick_rate": "41.7%" },
+      { "champion": "Aurora", "pick_rate": "27.3%" }
+    ],
+    "most_banned": [
+      { "champion": "Orianna", "ban_rate": "61.0%" },
+      { "champion": "Ryze", "ban_rate": "51.2%" },
+      { "champion": "Karma", "ban_rate": "26.8%" },
+      { "champion": "Rumble", "ban_rate": "24.4%" },
+      { "champion": "Varus", "ban_rate": "19.5%" }
+    ],
+    "notable_picks": [
+      { "champion": "Jax", "context": "Bin's signature pick — Finals MVP performance" },
+      { "champion": "Camille", "context": "Bin's champion pool — BLG overcooked with Camille at times" },
+      { "champion": "Zoe", "context": "Caps used to rub it in on BFX" },
+      { "champion": "Syndra", "context": "knight had a strong Syndra game" },
+      { "champion": "Shen", "context": "Memed for doing 0 damage in some games" },
+      { "champion": "Jhin", "context": "Late game Jhin strikes criticized" },
+      { "champion": "Vex", "context": "Underperforming pick" },
+      { "champion": "Kled", "context": "Someone watched a how-to-play Kled video during champ select" },
+      { "champion": "Renekton", "context": "Xun made plays on Renekton to save games" },
+      { "champion": "Bard", "context": "Out of meta after tournament" },
+      { "champion": "Aphelios", "context": "Picked in bot lane matchups" },
+      { "champion": "Ashe", "context": "Mentioned in community commentary" },
+      { "champion": "Varus", "context": "Hans Sama struggled on this pick — couldn't hit ultimates, wasn't dealing damage" }
+    ]
+  },
+
+  "key_narratives": [
+    {
+      "narrative": "BLG's Dominant Run",
+      "description": "BLG went nearly undefeated through the entire tournament, dropping only Game 3 of the finals. They swept every opponent in groups and semis before winning the finals 3-1."
+    },
+    {
+      "narrative": "Western Hope — G2's Run",
+      "description": "G2 Esports defied expectations by sweeping Gen.G 3-0 in the semis and reaching the finals. Despite losing 1-3 to BLG, they represented the best Western performance in recent memory. The narrative of 'Western fans having hope' was a major community theme."
+    },
+    {
+      "narrative": "Caps Legacy",
+      "description": "Caps continued his multi-year legacy of being the player who carries EU at international tournaments. From 2020 to 2026, the community observed it's always Caps dragging Europe forward."
+    },
+    {
+      "narrative": "SkewMond Breakout",
+      "description": "SkewMond emerged as a star at First Stand, particularly in the Gen.G sweep where he massively outjungled Canyon."
+    },
+    {
+      "narrative": "Bin the Western Slayer",
+      "description": "Bin's dominance over Western top laners, especially in the finals, became a 'canon event' meme. His Jax play was highlighted as a key factor in BLG's victory."
+    },
+    {
+      "narrative": "East vs West Gap",
+      "description": "First Stand 2026 was on pace to be one of the most one-sided major internationals in LoL history. The community debated whether Western LoL is 'beyond saving' despite G2's run."
+    },
+    {
+      "narrative": "LCK Disappointment",
+      "description": "Both LCK teams (Gen.G and BFX) were eliminated without winning a single series in the knockout stage. Gen.G's 0-3 loss to G2 was particularly shocking."
+    },
+    {
+      "narrative": "China's Return",
+      "description": "BLG's victory marked China's first major international title since 2023, ending a drought."
+    }
+  ],
+
+  "data_coverage": {
+    "total_comments": 1558,
+    "source": "Reddit (r/leagueoflegends post-match discussion threads)",
+    "matches_covered": [
+      "GrpA Open: BLG vs BFX",
+      "GrpA Winners: BLG vs G2",
+      "GrpA Elim: BFX vs TSW",
+      "GrpA Decider: G2 vs BFX",
+      "GrpB Open: GEN vs JDG",
+      "GrpB Open: LYON vs LOUD",
+      "GrpB Elim: JDG vs LOUD",
+      "GrpB Decider: JDG vs LYON",
+      "Semi 1: G2 vs GEN",
+      "Semi 2: BLG vs JDG",
+      "Finals: BLG vs G2"
+    ],
+    "comments_per_match": {
+      "GrpA Open: BLG vs BFX": 385,
+      "GrpA Winners: BLG vs G2": 118,
+      "GrpA Elim: BFX vs TSW": 4,
+      "GrpA Decider: G2 vs BFX": 116,
+      "GrpB Open: GEN vs JDG": 111,
+      "GrpB Open: LYON vs LOUD": 204,
+      "GrpB Elim: JDG vs LOUD": 112,
+      "GrpB Decider: JDG vs LYON": 162,
+      "Semi 1: G2 vs GEN": 107,
+      "Semi 2: BLG vs JDG": 104,
+      "Finals: BLG vs G2": 135
+    }
+  }
+}

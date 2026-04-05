@@ -5,6 +5,13 @@ import json
 from rank_bm25 import BM25Okapi
 from sentence_transformers import SentenceTransformer
 import chromadb
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"))
+
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
 
 
 def load_tournament_context(path="../Knowledge/tournament.json"):
@@ -86,6 +93,9 @@ collection.add(
 
 alpha = 0.5  # 0.5 = equal weight, higher = more BM25, lower = more semantic
 
+print("✅ RAG pipeline ready! (Using Groq + llama-3.3-70b-versatile)\n")
+
+
 while True:
     query = input("\nSearch: ")
     if query.lower() == 'quit':
@@ -102,7 +112,6 @@ while True:
     # Semantic distances for ALL comments
     results = collection.query(query_texts=[query], n_results=len(df), include=["distances"])
     distances = np.array(results['distances'][0])
-    # Flip distances (smaller distance = better) and normalize
     similarities = max(distances) - distances
     max_sim = max(similarities)
     if max_sim > 0:
@@ -118,26 +127,39 @@ while True:
     # Combine
     hybrid_scores = alpha * bm25_normalized + (1 - alpha) * semantic_scores
 
-    # Get top results — take all comments with a hybrid score above 0.1 (at least somewhat relevant), max 20
+    # Get top results
     sorted_indices = np.argsort(hybrid_scores)[::-1]
     top_indices = [i for i in sorted_indices if hybrid_scores[i] > 0.1][:20]
 
     # Build context from results
     context = ""
     for rank, i in enumerate(top_indices, 1):
-        # print(f"\n--- Result {rank} ---")
-        # print(f"Match: {df.iloc[i]['match']}")
-        # print(f"Body: {df.iloc[i]['body'][:200]}")
-        # print(f"Hybrid: {hybrid_scores[i]:.3f}  (BM25: {bm25_normalized[i]:.3f}, Semantic: {semantic_scores[i]:.3f})")
         context += f"[Comment from {df.iloc[i]['match']}, {int(df.iloc[i]['score'])} upvotes]: {df.iloc[i]['body']}\n\n"
 
     print(f"\n({len(top_indices)} relevant comments found)")
 
-    # Ask Ollama
+    # Ask Groq (instead of Ollama)
     print("\nThinking...")
-    response = requests.post("http://localhost:11434/api/generate", json={
-        "model": "gemma2",
-        "prompt": f"You are an esports analyst for League of Legends. Use the tournament info and community comments below to answer the question. Be concise and accurate.\n\n{TOURNAMENT_CONTEXT}\n\nRelevant community comments:\n{context}\nQuestion: {query}",
-        "stream": False
-    })
-    print(f"\nAnswer: {response.json()['response']}")
+    response = requests.post(
+        "https://api.groq.com/openai/v1/chat/completions",
+        headers={
+            "Authorization": f"Bearer {GROQ_API_KEY}",
+            "Content-Type": "application/json"
+        },
+        json={
+            "model": "llama-3.3-70b-versatile",
+            "messages": [
+                {
+                    "role": "user",
+                    "content": f"You are an esports analyst for League of Legends. Use the tournament info and community comments below to answer the question. Be concise and accurate.\n\n{TOURNAMENT_CONTEXT}\n\nRelevant community comments:\n{context}\nQuestion: {query}"
+                }
+            ],
+            "temperature": 0.7
+        }
+    )
+
+    if response.status_code == 200:
+        answer = response.json()['choices'][0]['message']['content']
+        print(f"\nAnswer: {answer}")
+    else:
+        print(f"\n❌ Error {response.status_code}: {response.json()}")

@@ -1,0 +1,559 @@
+{
+  "players": {
+    "Bin": {
+      "real_name": "Chen Zebin",
+      "ign": "Bin",
+      "team": "BLG",
+      "role": "Top",
+      "nationality": "Chinese",
+      "signature_champions": ["Jax", "Camille", "Renekton"],
+      "playstyle": "Aggressive split-pusher and teamfight carry. Known for 1v9 performances, mechanical outplays, and absorbing top lane pressure to create space for his team. Historically dominant against Western top laners.",
+      "tournament_performance": "Finals MVP. Dominated top lane matchups throughout the tournament. His Jax play was a centerpiece of BLG's success. 'Bin vs G2' became a meme — his dominance over Western top laners is considered a 'canon event' by the community.",
+      "achievements": ["First Stand 2026 Champion", "First Stand 2026 Finals MVP", "LPL 2026 Split 1 Champion"],
+      "community_sentiment": "Universally praised. The community considers him the best top laner in the world at the tournament, with his Jax being a signature terror pick."
+    },
+    "Xun": {
+      "real_name": "Peng Lixun",
+      "ign": "Xun",
+      "team": "BLG",
+      "role": "Jungle",
+      "nationality": "Chinese",
+      "signature_champions": ["Xin Zhao", "Vi", "Renekton"],
+      "playstyle": "Aggressive early-game jungler who prioritizes ganks and skirmishes. Known for proactive pathing and strong synergy with Bin's top side.",
+      "tournament_performance": "Made crucial plays on Renekton to save games. Consistent throughout the tournament, enabling BLG's dominant top-jungle duo.",
+      "achievements": ["First Stand 2026 Champion", "LPL 2026 Split 1 Champion"],
+      "community_sentiment": "Recognized for clutch plays, particularly on Renekton. Seen as a key enabler for the team's aggressive style."
+    },
+    "knight": {
+      "real_name": "Zhuo Ding",
+      "ign": "knight",
+      "team": "BLG",
+      "role": "Mid",
+      "nationality": "Chinese",
+      "signature_champions": ["Syndra", "Ahri", "Orianna"],
+      "playstyle": "World-class mid laner with exceptional laning and teamfight positioning. Known for consistent high-level play across all metas and strong champion ocean.",
+      "tournament_performance": "Solidified his status as a top-tier mid laner. Had standout Syndra games. Community sentiment from the finals: 'I better not hear your name compared to knight again.'",
+      "achievements": ["First Stand 2026 Champion", "LPL 2026 Split 1 Champion"],
+      "community_sentiment": "Respected as one of the best mid laners in the world. The community acknowledged his consistent excellence throughout the tournament."
+    },
+    "Viper": {
+      "real_name": "Park Do-hyeon",
+      "ign": "Viper",
+      "team": "BLG",
+      "role": "Bot",
+      "nationality": "Korean",
+      "signature_champions": ["Aphelios", "Varus", "Jinx"],
+      "playstyle": "Mechanically gifted AD carry known for precise teamfight positioning and ability to carry from the bot lane. Korean import in LPL.",
+      "tournament_performance": "Solid performances but had some games where he was 'gapped' according to community analysis. Part of BLG's championship-winning roster.",
+      "achievements": ["First Stand 2026 Champion", "LPL 2026 Split 1 Champion", "2021 World Champion (with EDG)"],
+      "community_sentiment": "Mixed — generally positive as part of the winning team, but some community members noted he was outperformed in certain games."
+    },
+    "ON": {
+      "real_name": "Luo Wenjun",
+      "ign": "ON",
+      "team": "BLG",
+      "role": "Support",
+      "nationality": "Chinese",
+      "signature_champions": ["Bard", "Karma", "Rumble", "Anivia"],
+      "playstyle": "Versatile support player with strong roaming and vision control. Provides the glue that holds BLG's aggressive playstyle together.",
+      "tournament_performance": "Reliable throughout the tournament. Notable post-game interview moment: 'okay.' — showing his calm demeanor even in victory.",
+      "achievements": ["First Stand 2026 Champion", "LPL 2026 Split 1 Champion"],
+      "community_sentiment": "Quietly respected. Not flashy but consistently good. His 'okay.' interview moment became a minor meme."
+    },
+
+    "BrokenBlade": {
+      "real_name": "Sergen Çelik",
+      "ign": "BrokenBlade",
+      "aliases": ["BB"],
+      "team": "G2",
+      "role": "Top",
+      "nationality": "German-Turkish",
+      "signature_champions": ["Camille", "Renekton", "Gnar"],
+      "playstyle": "Aggressive laner who thrives in carry matchups. Known for strong teamfighting but can struggle in losing lane matchups against elite Eastern top laners.",
+      "tournament_performance": "Had laning phase struggles throughout the tournament, particularly against Bin. Played well in Game 3 of finals outside of laning phase. Got diffed by TSW's Pun in groups, which became a community meme.",
+      "achievements": ["First Stand 2026 Runner-up", "LEC 2025 Summer Champion"],
+      "community_sentiment": "Polarizing. Praised for teamfighting in Game 3, but criticized for laning weakness. 'He got diffed by a guy named Pun' became a community joke."
+    },
+    "SkewMond": {
+      "real_name": "Rudy Semaan",
+      "ign": "SkewMond",
+      "team": "G2",
+      "role": "Jungle",
+      "nationality": "French-Lebanese",
+      "signature_champions": ["Vi", "Xin Zhao", "Lee Sin"],
+      "playstyle": "Aggressive, proactive jungler with strong early game presence. Known for creative pathing and the ability to create leads for his laners through well-timed ganks.",
+      "tournament_performance": "Breakout superstar of the tournament. Massively outjungled Canyon (Gen.G) in the semis — one of the most impressive jungle performances at the event. Was a primary reason G2 reached the finals.",
+      "achievements": ["First Stand 2026 Runner-up"],
+      "community_sentiment": "Extremely positive — the community's favorite storyline. Breakout star who went from T2 (tier 2 league) to outjungling Canyon at an international event. 'SkewMond...' became an expression of awe."
+    },
+    "Caps": {
+      "real_name": "Rasmus Winther",
+      "ign": "Caps",
+      "team": "G2",
+      "role": "Mid",
+      "nationality": "Danish",
+      "signature_champions": ["Zoe", "Ahri", "Syndra"],
+      "playstyle": "High-ceiling, high-risk mid laner. Known for mechanical brilliance, solokills, and clutch international performances. EU's greatest player — has carried European teams at international events for nearly a decade.",
+      "tournament_performance": "Solokilled Chovy in lane during the Gen.G series. Used Zoe to 'rub it in' against BFX. Continued his legendary status of carrying EU at internationals. The community repeatedly noted: 'It's 2020/2022/2024/2026 and I'm watching Caps carry EU in international tournaments.'",
+      "achievements": ["First Stand 2026 Runner-up", "Multiple LEC Titles", "2019 MSI Champion", "2x World Championship Finalist"],
+      "community_sentiment": "Iconic. The community views him as the eternal EU carry at international events. His solokill on Chovy was a tournament highlight."
+    },
+    "Hans Sama": {
+      "real_name": "Steven Liv",
+      "ign": "Hans Sama",
+      "team": "G2",
+      "role": "Bot",
+      "nationality": "French",
+      "signature_champions": ["Varus", "Jhin", "Aphelios"],
+      "playstyle": "Experienced AD carry with strong teamfight presence. Has played for multiple top European and North American teams throughout his career.",
+      "tournament_performance": "Criticized performance, particularly on Varus — community noted he 'cannot hit a Varus ult to save his life' and 'wasn't dealing any damage.' However, performed better when the team played around him, as noted: 'What happens when they sat on Hans? Hans melted people.'",
+      "achievements": ["First Stand 2026 Runner-up"],
+      "community_sentiment": "Negative to mixed. His Varus play was heavily criticized. Seen as the weak link of G2's finals run, though some defended him saying the team didn't play around him enough."
+    },
+    "Labrov": {
+      "real_name": "Labros Papoutsakis",
+      "ign": "Labrov",
+      "team": "G2",
+      "role": "Support",
+      "nationality": "Greek",
+      "signature_champions": ["Bard", "Rakan", "Nautilus"],
+      "playstyle": "Playmaking support known for aggressive engages and clutch plays. Strong in roaming and creating advantages across the map.",
+      "tournament_performance": "Had standout performances in the Group A decider against BFX — 'Labrov James — with a rejection?' became a community highlight. Strong playmaking throughout the tournament run.",
+      "achievements": ["First Stand 2026 Runner-up"],
+      "community_sentiment": "Very positive. Praised for playmaking ability, especially in the BFX series. 'Labrov James' became a community nickname."
+    },
+
+    "Kiin": {
+      "real_name": "Kim Gi-in",
+      "ign": "Kiin",
+      "team": "GEN",
+      "role": "Top",
+      "nationality": "Korean",
+      "signature_champions": ["Jayce", "Kennen", "Rumble"],
+      "playstyle": "Veteran top laner known for strong laning, versatile champion pool, and consistent performances. One of the most respected top laners in LCK history.",
+      "tournament_performance": "Eliminated in the semifinals. Part of Gen.G's shocking 0-3 loss to G2. Unable to create the expected top lane advantage over BrokenBlade.",
+      "achievements": ["LCK 2024 Summer Champion", "Multiple LCK playoff appearances"],
+      "community_sentiment": "Sympathetic. The community largely blamed the team's collective failure rather than singling out Kiin. Still widely respected despite the poor result."
+    },
+    "Canyon": {
+      "real_name": "Kim Geon-bu",
+      "ign": "Canyon",
+      "team": "GEN",
+      "role": "Jungle",
+      "nationality": "Korean",
+      "signature_champions": ["Viego", "Lee Sin", "Nidalee"],
+      "playstyle": "One of the greatest junglers in LoL history. Known for immaculate pathing, objective control, and carry-level damage from the jungle position.",
+      "tournament_performance": "Had an uncharacteristically poor series against G2 in the semifinals, getting massively outjungled by SkewMond. The community noted this shouldn't define his career given his insane domestic split.",
+      "achievements": ["2020 World Champion", "Multiple LCK Titles", "2024 LCK Summer Champion"],
+      "community_sentiment": "Respected despite the loss. Community consensus: '1 bad series shouldn't break the insane split he had.' Shoutout given to his overall caliber despite the shocking result."
+    },
+    "Chovy": {
+      "real_name": "Jeong Ji-hoon",
+      "ign": "Chovy",
+      "team": "GEN",
+      "role": "Mid",
+      "nationality": "Korean",
+      "signature_champions": ["Orianna", "Azir", "Corki"],
+      "playstyle": "CS and laning perfectionist — consistently posts the highest CS/min in the league. Known as one of the best individual mid laners but historically questioned on converting leads into international titles.",
+      "tournament_performance": "Got solokilled by Caps in the semifinal series, which became a major talking point. Part of Gen.G's shocking 0-3 loss to G2.",
+      "achievements": ["Multiple LCK Titles", "2024 LCK Summer Champion"],
+      "community_sentiment": "The 'always the bridesmaid' narrative continued. His solokill by Caps was one of the tournament's most discussed moments. Still respected for his raw talent."
+    },
+    "Ruler": {
+      "real_name": "Park Jae-hyuk",
+      "ign": "Ruler",
+      "team": "GEN",
+      "role": "Bot",
+      "nationality": "Korean",
+      "signature_champions": ["Varus", "Xayah", "Jinx"],
+      "playstyle": "World Championship-winning AD carry known for clutch teamfight positioning and consistent performances in high-pressure situations.",
+      "tournament_performance": "Part of Gen.G's 0-3 semifinal loss to G2. Unable to impact the series meaningfully.",
+      "achievements": ["2017 World Champion", "Multiple LCK Titles"],
+      "community_sentiment": "Neutral. The community saw the loss as a team failure rather than individual. His legacy as a World Champion remains respected."
+    },
+    "Duro": {
+      "real_name": "Joo Min-kyu",
+      "ign": "Duro",
+      "team": "GEN",
+      "role": "Support",
+      "nationality": "Korean",
+      "signature_champions": ["Nautilus", "Thresh", "Alistar"],
+      "playstyle": "Steady support player focused on engage and protection. Newer addition to the Gen.G roster.",
+      "tournament_performance": "Part of Gen.G's disappointing tournament run. Eliminated in semifinals.",
+      "achievements": ["LCK 2026 roster"],
+      "community_sentiment": "Relatively unknown to Western fans. The community didn't single him out specifically for the loss."
+    },
+
+    "Clear": {
+      "real_name": "Song Hyeon-min",
+      "ign": "Clear",
+      "team": "BFX",
+      "role": "Top",
+      "nationality": "Korean",
+      "signature_champions": ["Renekton", "Gnar", "Aatrox"],
+      "playstyle": "Solid top laner in the LCK. Plays a frontline-oriented style with engage champions.",
+      "tournament_performance": "Unable to prevent BFX from being eliminated in Group A. Outclassed by both Bin and BrokenBlade in group stage matches.",
+      "achievements": ["LCK 2026 roster"],
+      "community_sentiment": "Not heavily discussed. BFX was largely overshadowed by the bigger storylines."
+    },
+    "Raptor": {
+      "real_name": "Jeon Eo-jin",
+      "ign": "Raptor",
+      "team": "BFX",
+      "role": "Jungle",
+      "nationality": "Korean",
+      "signature_champions": ["Vi", "Xin Zhao", "Viego"],
+      "playstyle": "Young jungler developing in the LCK system. Shows flashes of potential with aggressive early game plays.",
+      "tournament_performance": "Eliminated in Group A. BFX lost all series at the tournament.",
+      "achievements": ["LCK 2026 roster"],
+      "community_sentiment": "Not heavily discussed individually."
+    },
+    "VicLa": {
+      "real_name": "Lee Dae-kwang",
+      "ign": "VicLa",
+      "team": "BFX",
+      "role": "Mid",
+      "nationality": "Korean",
+      "signature_champions": ["Ahri", "Azir", "Syndra"],
+      "playstyle": "Mechanically skilled mid laner who traded blows with top-tier opposition. Known for aggressive early laning.",
+      "tournament_performance": "Traded half his HP with Caps before minions even spawned in the G2 decider match. Got 'hard gapped' according to community analysis. Generally outmatched at the international level.",
+      "achievements": ["LCK 2026 roster"],
+      "community_sentiment": "Noted for the pre-minion HP trade with Caps. Seen as talented but outclassed at the international level."
+    },
+    "Diable": {
+      "real_name": "Nam Dae-geun",
+      "ign": "Diable",
+      "team": "BFX",
+      "role": "Bot",
+      "nationality": "Korean",
+      "signature_champions": ["Aphelios", "Jinx", "Varus"],
+      "playstyle": "AD carry focused on scaling and teamfight DPS.",
+      "tournament_performance": "Eliminated in groups. Part of the BFX lineup that couldn't compete with the top teams.",
+      "achievements": ["LCK 2026 roster"],
+      "community_sentiment": "Not heavily discussed individually."
+    },
+    "Kellin": {
+      "real_name": "Kim Hyeong-gyu",
+      "ign": "Kellin",
+      "team": "BFX",
+      "role": "Support",
+      "nationality": "Korean",
+      "signature_champions": ["Nautilus", "Braum", "Thresh"],
+      "playstyle": "Veteran support with experience across multiple LCK teams. Known for steady, reliable play.",
+      "tournament_performance": "Eliminated in groups. A brief 'DK Kellin reconnected' meme surfaced, referencing his previous time on DWG KIA.",
+      "achievements": ["2020 World Champion (with DAMWON Gaming)", "LCK 2026 roster"],
+      "community_sentiment": "The 'DK Kellin reconnected' meme was the main community interaction. Respected for his past achievements."
+    },
+
+    "Xiaoxu": {
+      "real_name": "Xu Xing-Zu",
+      "ign": "Xiaoxu",
+      "team": "JDG",
+      "role": "Top",
+      "nationality": "Chinese",
+      "signature_champions": ["Gnar", "Shen", "Renekton"],
+      "playstyle": "Team-oriented top laner who plays frontline and utility champions. Provides stability to the team's composition.",
+      "tournament_performance": "Part of JDG's run through the losers bracket and eventual semifinal exit. Outclassed by Bin in the all-LPL semifinal.",
+      "achievements": ["LPL 2026 roster"],
+      "community_sentiment": "Not heavily discussed individually. JDG's identity was more about team macro than individual stars."
+    },
+    "JunJia": {
+      "real_name": "Yu Chun-Chia",
+      "ign": "JunJia",
+      "team": "JDG",
+      "role": "Jungle",
+      "nationality": "Taiwanese",
+      "signature_champions": ["Xin Zhao", "Vi", "Sejuani"],
+      "playstyle": "Methodical jungler focused on objective control and macro play.",
+      "tournament_performance": "Part of JDG's campaign through the losers bracket in Group B. Eliminated in the semifinal against BLG.",
+      "achievements": ["LPL 2026 roster"],
+      "community_sentiment": "Not heavily discussed individually."
+    },
+    "HongQ": {
+      "real_name": "Tsai Ming-Hong",
+      "ign": "HongQ",
+      "team": "JDG",
+      "role": "Mid",
+      "nationality": "Taiwanese",
+      "signature_champions": ["Ahri", "Aurora", "Orianna"],
+      "playstyle": "Taiwanese mid laner playing in the LPL. Brings a controlled, macro-oriented mid lane style.",
+      "tournament_performance": "Part of JDG's semifinal run. Unable to match knight in the BLG series.",
+      "achievements": ["LPL 2026 roster"],
+      "community_sentiment": "Not heavily discussed individually."
+    },
+    "GALA": {
+      "real_name": "Chen Wei",
+      "ign": "GALA",
+      "team": "JDG",
+      "role": "Bot",
+      "nationality": "Chinese",
+      "signature_champions": ["Kai'Sa", "Varus", "Jinx"],
+      "playstyle": "Experienced LPL AD carry known for flashy plays and clutch teamfight positioning. Previously famous for his Kai'Sa pentakill at MSI 2021.",
+      "tournament_performance": "Part of JDG's campaign. One of the more well-known players on the JDG roster.",
+      "achievements": ["2021 MSI Champion (with RNG)", "Multiple LPL playoff appearances"],
+      "community_sentiment": "Respected veteran. The community knows his name well from his RNG days."
+    },
+    "Vampire": {
+      "real_name": "Zhao Zhe-Can",
+      "ign": "Vampire",
+      "team": "JDG",
+      "role": "Support",
+      "nationality": "Chinese",
+      "signature_champions": ["Nautilus", "Braum", "Rakan"],
+      "playstyle": "Engage-focused support player.",
+      "tournament_performance": "Part of JDG's tournament run. Eliminated in semifinals.",
+      "achievements": ["LPL 2026 roster"],
+      "community_sentiment": "Not heavily discussed individually."
+    },
+
+    "Dhokla": {
+      "real_name": "Niship Doshi",
+      "ign": "Dhokla",
+      "team": "LYON",
+      "role": "Top",
+      "nationality": "American (Indian descent)",
+      "signature_champions": ["Aatrox", "Gnar", "Ornn"],
+      "playstyle": "Veteran North American top laner. Joined LYON as a late replacement due to visa issues with the original top laner (Zamudo).",
+      "tournament_performance": "Part of LYON's Group B exit. Eliminated after losses to Gen.G (via seeding) and JDG in the decider. Community mocked: 'Dhokla: okay.'",
+      "achievements": ["LCS 2026 roster", "Multiple LCS seasons"],
+      "community_sentiment": "A known quantity in the LCS scene. Not expected to compete with top Eastern top laners."
+    },
+    "Inspired": {
+      "real_name": "Kacper Słoma",
+      "ign": "Inspired",
+      "team": "LYON",
+      "role": "Jungle",
+      "nationality": "Polish",
+      "signature_champions": ["Viego", "Lee Sin", "Graves"],
+      "playstyle": "Talented European-born jungler playing in the LCS. Known for mechanical skill but also for controversial in-game moments.",
+      "tournament_performance": "Notably blamed for 'flaming his team into them losing the series on a smite fight.' Part of LYON's group stage elimination.",
+      "achievements": ["2022 LCS Champion (with EG)", "LEC 2021 Summer MVP"],
+      "community_sentiment": "Controversial. The community criticized his behavior during the tournament, specifically for internal team conflicts."
+    },
+    "Saint": {
+      "real_name": "Kang Sung-in",
+      "ign": "Saint",
+      "team": "LYON",
+      "role": "Mid",
+      "nationality": "Korean",
+      "signature_champions": ["Ahri", "Syndra", "Orianna"],
+      "playstyle": "Korean mid laner imported to the LCS. Provides a solid lane presence for the team.",
+      "tournament_performance": "Part of LYON's group stage elimination. Not able to make a significant impact at the international level.",
+      "achievements": ["LCS 2026 roster"],
+      "community_sentiment": "Not heavily discussed individually."
+    },
+    "Berserker": {
+      "real_name": "Kim Min-cheol",
+      "ign": "Berserker",
+      "team": "LYON",
+      "role": "Bot",
+      "nationality": "Korean",
+      "signature_champions": ["Aphelios", "Jinx", "Zeri"],
+      "playstyle": "Mechanically gifted Korean AD carry playing in the LCS. Known for his time on T1's roster before moving to North America.",
+      "tournament_performance": "Part of LYON's group stage exit. Despite his individual talent, unable to carry the team to the knockout stage.",
+      "achievements": ["LCS 2026 roster", "Former T1 Academy player"],
+      "community_sentiment": "Sympathetic. The community sees him as a talented player stuck on a weaker region's team."
+    },
+    "Isles": {
+      "real_name": "Jonah Rosario",
+      "ign": "Isles",
+      "team": "LYON",
+      "role": "Support",
+      "nationality": "Filipino-Australian",
+      "signature_champions": ["Nautilus", "Thresh", "Rakan"],
+      "playstyle": "Oceanian support player who has played in multiple regions. Brings experience and engage playmaking.",
+      "tournament_performance": "Part of LYON's group stage elimination.",
+      "achievements": ["LCS 2026 roster", "Former OPL player"],
+      "community_sentiment": "Not heavily discussed individually."
+    },
+
+    "Xyno": {
+      "real_name": "Carlos Felipe Ferreira",
+      "ign": "xyno",
+      "team": "LOUD",
+      "role": "Top",
+      "nationality": "Brazilian",
+      "signature_champions": ["Gnar", "Aatrox", "Ornn"],
+      "playstyle": "Brazilian top laner representing the CBLOL region. Plays a frontline style focused on teamfight initiation.",
+      "tournament_performance": "Part of LOUD's group stage elimination. As the host team, LOUD's early exit was disappointing for local fans. Lost to LYON and then JDG.",
+      "achievements": ["CBLOL champion"],
+      "community_sentiment": "The community was sympathetic to LOUD as the host team. Xyno was not singled out individually."
+    },
+    "YoungJae": {
+      "real_name": "Ko Yeong-jae",
+      "ign": "YoungJae",
+      "team": "LOUD",
+      "role": "Jungle",
+      "nationality": "Korean",
+      "signature_champions": ["Xin Zhao", "Vi", "Viego"],
+      "playstyle": "Korean jungle import in CBLOL. Brings LCK-style pathing and objective control to the Brazilian league.",
+      "tournament_performance": "Part of LOUD's group stage exit. Unable to compete with the top-tier junglers at the tournament.",
+      "achievements": ["CBLOL 2026 roster"],
+      "community_sentiment": "Not heavily discussed individually."
+    },
+    "Envy": {
+      "real_name": "Bruno Farias",
+      "ign": "Envy",
+      "team": "LOUD",
+      "role": "Mid",
+      "nationality": "Brazilian",
+      "signature_champions": ["Ahri", "Orianna", "Syndra"],
+      "playstyle": "Brazilian mid laner who replaced Mago during the CBLOL season due to internal conflicts with coaching staff.",
+      "tournament_performance": "Part of LOUD's group stage elimination. Joined mid-season as a replacement, which may have affected team synergy.",
+      "achievements": ["CBLOL 2026 roster"],
+      "community_sentiment": "Not heavily discussed individually. The roster change was noted by the community."
+    },
+    "Bull": {
+      "real_name": "Song Seon-gyu",
+      "ign": "Bull",
+      "team": "LOUD",
+      "role": "Bot",
+      "nationality": "Korean",
+      "signature_champions": ["Varus", "Jinx", "Aphelios"],
+      "playstyle": "Korean AD carry import in CBLOL.",
+      "tournament_performance": "Part of LOUD's group stage exit.",
+      "achievements": ["CBLOL 2026 roster"],
+      "community_sentiment": "Not heavily discussed individually."
+    },
+    "RedBert": {
+      "real_name": "Ygor Freitas",
+      "ign": "RedBert",
+      "team": "LOUD",
+      "role": "Support",
+      "nationality": "Brazilian",
+      "signature_champions": ["Nautilus", "Rakan", "Alistar"],
+      "playstyle": "Brazilian support player. Experienced in the CBLOL scene.",
+      "tournament_performance": "Part of LOUD's group stage elimination.",
+      "achievements": ["CBLOL 2026 roster"],
+      "community_sentiment": "Not heavily discussed individually."
+    },
+
+    "Pun": {
+      "real_name": "Nguyễn Đăng Khoa",
+      "ign": "Pun",
+      "team": "TSW",
+      "role": "Top",
+      "nationality": "Vietnamese",
+      "signature_champions": ["Gnar", "Renekton", "Aatrox"],
+      "playstyle": "Vietnamese top laner representing the LCP (APAC) region.",
+      "tournament_performance": "Notably 'diffed' BrokenBlade in a group stage game, which became a community meme: 'He got diffed by a guy named Pun.' TSW was eliminated last in Group A.",
+      "achievements": ["LCP 2026 roster"],
+      "community_sentiment": "Became a meme for outperforming BrokenBlade. Despite TSW finishing last, Pun earned some respect for his individual play."
+    },
+    "Hizto": {
+      "real_name": "Lê Văn Hoàng Hải",
+      "ign": "Hizto",
+      "team": "TSW",
+      "role": "Jungle",
+      "nationality": "Vietnamese",
+      "signature_champions": ["Vi", "Xin Zhao", "Lee Sin"],
+      "playstyle": "Vietnamese jungler playing in the LCP.",
+      "tournament_performance": "Eliminated in Group A (last place). TSW only played one series (the elimination match vs BFX, which they lost).",
+      "achievements": ["LCP 2026 roster"],
+      "community_sentiment": "Not heavily discussed individually."
+    },
+    "Dire": {
+      "real_name": "Trần Duy Đức",
+      "ign": "Dire",
+      "team": "TSW",
+      "role": "Mid",
+      "nationality": "Vietnamese",
+      "signature_champions": ["Ahri", "Syndra", "Orianna"],
+      "playstyle": "Vietnamese mid laner representing Team Secret Whales in the LCP.",
+      "tournament_performance": "Eliminated in Group A (last place).",
+      "achievements": ["LCP 2026 roster"],
+      "community_sentiment": "Not heavily discussed individually."
+    },
+    "Eddie": {
+      "real_name": "Hoàng Công Nghĩa",
+      "ign": "Eddie",
+      "team": "TSW",
+      "role": "Bot",
+      "nationality": "Vietnamese",
+      "signature_champions": ["Aphelios", "Varus", "Jinx"],
+      "playstyle": "Vietnamese AD carry playing in the LCP.",
+      "tournament_performance": "Eliminated in Group A (last place).",
+      "achievements": ["LCP 2026 roster"],
+      "community_sentiment": "Not heavily discussed individually."
+    },
+    "Bie": {
+      "real_name": "Trần Đức Hiếu",
+      "ign": "Bie",
+      "team": "TSW",
+      "role": "Support",
+      "nationality": "Vietnamese",
+      "signature_champions": ["Nautilus", "Thresh", "Rakan"],
+      "playstyle": "Vietnamese support player representing Team Secret Whales.",
+      "tournament_performance": "Eliminated in Group A (last place).",
+      "achievements": ["LCP 2026 roster"],
+      "community_sentiment": "Not heavily discussed individually."
+    }
+  },
+
+  "coaches": {
+    "BLG": {
+      "ign": "Daeny",
+      "real_name": "Yang Dae-in",
+      "nationality": "Korean",
+      "background": "One of the most decorated coaches in LoL history. Won the 2020 World Championship as part of the DAMWON Gaming coaching staff. Led Weibo Gaming to the 2023 World Championship finals. Joined BLG in December 2025.",
+      "achievements": ["2020 World Champion (DAMWON Gaming)", "2023 Worlds Finalist (Weibo Gaming)", "First Stand 2026 Champion (BLG)", "LPL 2026 Split 1 Champion (BLG)"],
+      "tournament_role": "Led BLG's dominant tournament run, including clean sweeps through groups and semis. His drafting and preparation were key factors in BLG's near-undefeated record."
+    },
+    "G2": {
+      "ign": "Dylan Falco",
+      "real_name": "Dylan Falco",
+      "nationality": "Canadian",
+      "background": "Veteran coach who has been with G2 Esports since December 2021. Before esports, he was a poker coach. Started his esports career at TSM in 2014 as an analyst. Has coached at H2k, Immortals, EnVyUs, and Fnatic before joining G2. Known for adaptability and roster management.",
+      "achievements": ["LEC 2025 Summer Champion (G2)", "First Stand 2026 Runner-up (G2)", "Multiple LEC titles", "Former Fnatic head coach"],
+      "tournament_role": "Guided G2 to a surprising finals appearance, including the historic 3-0 sweep of Gen.G. His drafting in the semifinal was praised."
+    },
+    "GEN": {
+      "ign": "Ryu",
+      "real_name": "Yoo Sang-wook",
+      "nationality": "Korean",
+      "background": "Former professional mid laner famous for the iconic 'Zed vs Zed' play against Faker in 2013. Played for KT Rolster Bullets, ROCCAT, H2k, and 100 Thieves. Transitioned to coaching in 2022 with Liiv SANDBOX (later BNK FearX). Led BNK FearX to win the 2025 League of Legends Asia Invitational. Joined Gen.G as head coach in November 2025.",
+      "achievements": ["2025 Asia Invitational Champion (BNK FearX)", "Former professional player", "Gen.G head coach 2026"],
+      "tournament_role": "His Gen.G squad was the LCK #1 seed but suffered a shocking 0-3 loss to G2 in the semifinals. The coaching preparation was questioned after the sweep."
+    },
+    "BFX": {
+      "ign": "Edo",
+      "real_name": "Park Jun-seok",
+      "nationality": "Korean",
+      "background": "Promoted from coaching BNK FearX's youth team to the main roster in November 2025, replacing Ryu who departed for Gen.G.",
+      "achievements": ["BNK FearX head coach 2026"],
+      "tournament_role": "Led BFX to the tournament but was eliminated in Group A after losing to BLG and G2."
+    },
+    "JDG": {
+      "ign": "Tabe",
+      "real_name": "Wong Pak Kan",
+      "nationality": "Hong Kong Chinese",
+      "background": "Former professional support player, most famous for winning the 2013 World Championship with Royal Club alongside Uzi. One of the most recognizable names in early Chinese LoL history. Transitioned to coaching and has been with JDG.",
+      "achievements": ["2013 World Champion (Royal Club, as player)", "JDG head coach"],
+      "tournament_role": "Led JDG through the Group B losers bracket (beating LOUD and LYON) to reach the semifinals, where they were swept by BLG."
+    },
+    "LYON": {
+      "ign": "Reignover",
+      "real_name": "Kim Yeu-jin",
+      "nationality": "Korean",
+      "background": "Former professional jungler who played in the LCK (Incredible Miracle), EU LCS (Fnatic), and NA LCS (Immortals, Team Liquid, CLG). Part of Fnatic's legendary 2015 roster that went 18-0 in EU LCS. Transitioned to coaching after retiring from competitive play.",
+      "achievements": ["EU LCS 2015 Summer Champion (Fnatic, as player)", "NA LCS veteran", "LYON head coach 2026"],
+      "tournament_role": "Led LYON to a win over LOUD in the Group B opener but was unable to advance past JDG in the decider."
+    },
+    "LOUD": {
+      "ign": "Raise",
+      "real_name": "Oh Ji-hwan",
+      "nationality": "Korean",
+      "background": "Korean coach managing the Brazilian LOUD roster. Dealt with internal roster conflicts during the season, including the departure of mid laner Mago.",
+      "achievements": ["CBLOL titles with LOUD"],
+      "tournament_role": "Led LOUD as the host team but was eliminated in Group B after losses to LYON and JDG."
+    },
+    "TSW": {
+      "ign": "WarHorse",
+      "real_name": "Chen Ju-Chih",
+      "nationality": "Taiwanese",
+      "background": "Experienced coach in the APAC scene. Has coached multiple teams in the LCP and predecessor leagues. Brought Team Secret Whales to their first major international event.",
+      "achievements": ["Multiple APAC coaching tenures", "TSW head coach 2026"],
+      "tournament_role": "TSW was eliminated last in Group A after a loss to BFX in the elimination match. The shortest tournament run of any team."
+    }
+  }
+}
