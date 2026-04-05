@@ -23,6 +23,17 @@ load_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"))
 
 KNOWLEDGE_DIR = "../Knowledge"
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
+CACHE_FILE = "./cache.json"
+
+def load_cache():
+    if os.path.exists(CACHE_FILE):
+        with open(CACHE_FILE, "r") as f:
+            return json.load(f)
+    return {}
+
+def save_cache(cache):
+    with open(CACHE_FILE, "w") as f:
+        json.dump(cache, f, indent=4)
 
 
 # ──────────────────────────────────────────────────────────────
@@ -283,13 +294,17 @@ def build_collection(client, model, name, chunks):
 # 3. MULTI-COLLECTION SEARCH
 # ──────────────────────────────────────────────────────────────
 
-def search_collection(collection, query, n_results=5):
+def search_collection(collection, query, n_results=5, where=None):
     """Search a single ChromaDB collection and return results."""
-    results = collection.query(
-        query_texts=[query],
-        n_results=min(n_results, collection.count()),
-        include=["documents", "metadatas", "distances"],
-    )
+    kwargs = {
+        "query_texts": [query],
+        "n_results": min(n_results, collection.count()),
+        "include": ["documents", "metadatas", "distances"]
+    }
+    if where:
+        kwargs["where"] = where
+
+    results = collection.query(**kwargs)
     return [
         {
             "text": doc,
@@ -337,12 +352,26 @@ def hybrid_comment_search(query, df, bm25, comments_collection, alpha=0.5, top_k
 def multi_collection_search(query, collections, df, bm25):
     """Search all collections and return structured results."""
 
+    # Simple Metadata Filters
+    q_lower = query.lower()
+    comment_filter = None
+    if "finals" in q_lower or "final" in q_lower:
+        comment_filter = {"match": "BLG_vs_G2_Finals"}
+    elif "semis" in q_lower or "semi" in q_lower:
+        comment_filter = {"stage": "Semi-Finals"}
+
     # 1. Comments: hybrid BM25 + semantic
     top_indices, hybrid_scores = hybrid_comment_search(
         query, df, bm25, collections["comments"]
     )
+    
     comment_results = []
     for i in top_indices:
+        # Apply strict comment metadata filter if present
+        if comment_filter and "match" in comment_filter:
+            if df.iloc[i]["match"] != comment_filter["match"]:
+                continue
+        
         comment_results.append({
             "text": df.iloc[i]["body"],
             "match": df.iloc[i]["match"],
@@ -408,12 +437,18 @@ def build_prompt(query, results):
     context = "\n\n".join(sections)
 
     prompt = (
-        "You are an esports analyst for League of Legends. You know the First Stand 2026 tournament inside out. "
-        "Use the tournament info and community comments below to answer the question. "
-        "Be concise and accurate. Blend facts with community sentiment naturally — "
-        "don't be robotic about it, talk like someone who actually watches pro League.\n\n"
-        f"{context}\n\n"
-        f"Question: {query}"
+        "You are an esports analyst for League of Legends. You know the First Stand 2026 tournament inside out.\n"
+        "You have two types of sources:\n"
+        "1. OFFICIAL STATS (Tournament info, Champion stats, Player info) — Treat this as the factual ground truth.\n"
+        "2. REDDIT COMMENTS (Community reactions) — Treat this as community opinion only, do not present this as fact.\n\n"
+        "When answering:\n"
+        "- State facts from official sources first.\n"
+        "- Then seamlessly blend in the community sentiment.\n"
+        "- If fewer than 3 comments support a claim, mention that opinions were mixed.\n"
+        "- Be concise, natural, and never hallucinate beyond the provided context.\n\n"
+        f"--- CONTEXT ---\n"
+        f"{context}\n"
+        f"---------------\n"
     )
 
     return prompt
@@ -476,14 +511,24 @@ def main():
 
     print("\n✅ Multi-collection RAG pipeline ready! (Using Groq + llama-3.3-70b-versatile)")
     print("   Type a question, or 'quit' to exit.")
-    print("   Type 'debug' before a query to see what was retrieved.\n")
+    print("   Type 'debug' before a query to see what was retrieved.")
+    print("   Type 'clear' to wipe conversation memory.\n")
 
     debug_mode = False
+    cache = load_cache()
+    conversation_history = [
+        {"role": "system", "content": "You are a specialized AI assistant that uses retrieved First Stand 2026 data to answer questions."}
+    ]
 
     while True:
         query = input("\nSearch: ").strip()
         if query.lower() == "quit":
             break
+        
+        if query.lower() == "clear":
+            conversation_history = [conversation_history[0]]
+            print("   🧹 Conversation memory cleared.")
+            continue
 
         if query.lower().startswith("debug"):
             debug_mode = not debug_mode
@@ -495,8 +540,24 @@ def main():
         if not query:
             continue
 
-        # Search all collections
+        # 1. Check Cache First
+        if query.lower() in cache and not debug_mode:
+            print(f"\n⚡ (Cached) Answer: {cache[query.lower()]}")
+            conversation_history.append({"role": "user", "content": query})
+            conversation_history.append({"role": "assistant", "content": cache[query.lower()]})
+            continue
+
+        # 2. Search all collections
         results = multi_collection_search(query, collections, df, bm25)
+        
+        # 3. Fallback logic: If no comments hit minimum threshold, warn.
+        max_hybrid_score = 0
+        if results["comments"]:
+            max_hybrid_score = max(c["score"] for c in results["comments"])
+        
+        if max_hybrid_score < 0.1 and not results["tournament"] and not results["champions"] and not results["players"]:
+            print("\nAnswer: I don't have enough reliable data from the tournament or comments to answer that confidently.")
+            continue
 
         # Debug output
         if debug_mode:
@@ -522,8 +583,14 @@ def main():
               f"{len(results['champions'])} champion, "
               f"{len(results['comments'])} comment chunks)")
 
-        # Build structured prompt
-        prompt = build_prompt(query, results)
+        # 4. Build structured prompt
+        system_prompt = build_prompt(query, results)
+        
+        # We append the retrieval context to the user's latest query
+        user_message = f"Based on the following context, please answer the question:\n{system_prompt}\n\nQuestion: {query}"
+        
+        messages = conversation_history.copy()
+        messages.append({"role": "user", "content": user_message})
 
         # Ask Groq
         print("\nThinking...")
@@ -535,7 +602,7 @@ def main():
             },
             json={
                 "model": "llama-3.3-70b-versatile",
-                "messages": [{"role": "user", "content": prompt}],
+                "messages": messages,
                 "temperature": 0.7,
             },
         )
@@ -543,6 +610,13 @@ def main():
         if response.status_code == 200:
             answer = response.json()["choices"][0]["message"]["content"]
             print(f"\nAnswer: {answer}")
+            
+            # Save to cache and memory
+            cache[query.lower()] = answer
+            save_cache(cache)
+            
+            conversation_history.append({"role": "user", "content": query})  # Keep clean history without the massive context block
+            conversation_history.append({"role": "assistant", "content": answer})
         else:
             print(f"\n❌ Error {response.status_code}: {response.json()}")
 
